@@ -22,6 +22,13 @@ GPIO.setup(23, GPIO.IN, pull_up_down=GPIO.PUD_UP)
 
 GPIO.setup(22, GPIO.OUT)
 
+GPIO.setup(27, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+GPIO.setup(18, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+GPIO.setup(17, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+GPIO.setup(15, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+GPIO.setup(14, GPIO.IN, pull_up_down=GPIO.PUD_UP)
+
+
 
 def get_adc(channel):                                   
     if ((channel > 1) or (channel < 0)):                
@@ -49,15 +56,24 @@ def writeDigitalOutput(pin,value):
         return "ERROR: input value not correct"
 
 def readDigitalInput(x):
-    if x not in [1,2,3]:
+    if x not in [1,2,3,5,6,7,8,9]:
         return "Error: pin not correct!"
     if x ==1:
         pin=25
     elif x==2:
         pin = 24
-    else:
+    elif x == 3:
         pin = 23
-        
+    elif x == 5:
+        pin = 27
+    elif x = 6:
+        pin = 18
+    elif x = 7:
+        pin = 17
+    elif x = 8:
+        pin = 15
+    elif x = 9:
+        pin = 14 
     return GPIO.input(pin)
 
 def delay(ms):
