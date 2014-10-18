@@ -46,6 +46,8 @@ def readAnalogInput():
     return get_adc(1)
 
 def writeDigitalOutput(pin,value):
+    if pin == 1:
+        thing = 25
     if pin == 4:
         thing = 22
     else:
@@ -68,13 +70,13 @@ def readDigitalInput(x):
         pin = 23
     elif x == 5:
         pin = 27
-    elif x = 6:
+    elif x == 6:
         pin = 18
-    elif x = 7:
+    elif x == 7:
         pin = 17
-    elif x = 8:
+    elif x == 8:
         pin = 15
-    elif x = 9:
+    elif x == 9:
         pin = 14 
     return GPIO.input(pin)
 
